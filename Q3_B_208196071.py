@@ -3,13 +3,13 @@ from itertools import combinations
 
 # Function name: maxProfit(A)
 # Input: the A list
-# Output: the max difference from two elements -> two sales
+# Output: the max income from two sales on the A list of stocks
 def maxProfit(A):
-    # initialize
+    # initialize the helpers
     maxi = 0
     lst1 = list(combinations(A, 4))
     # find the max from the 4 combinations, (a,b),(c,d) ->
-    # find the max difference between a -> b, c->d
+    # find the max difference between a -> b,  c -> d
     for (a, b, c, d) in lst1:
         if - c + d - a + b > maxi:
             maxi = -a + b - c + d
