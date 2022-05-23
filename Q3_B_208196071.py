@@ -1,19 +1,24 @@
-import itertools
+from itertools import combinations
 
 # Function name: maxProfit(A)
-# Input: the A list (n - the length of the A list)
-# Output: the max difference from two elements -> What the question want's
+# Input: the A list
+# Output: the max difference from two elements -> two sales
 def maxProfit(A):
-    max_profit = 0
-    my_combinations = list(itertools.combinations(A, 4))
-    for (x, y, z, w) in my_combinations:
-        if (-x + y - z + w) > max_profit:
-            max_profit = (-x + y - z + w)
-    my_combinations = list(itertools.combinations(A, 2))
-    for (x, y) in my_combinations:
-        if (-x + y) > max_profit:
-            max_profit = (-x + y)
-    return max_profit
+    # initialize
+    maxi = 0
+    lst1 = list(combinations(A, 4))
+    # find the max from the 4 combinations, (a,b),(c,d) ->
+    # find the max difference between a -> b, c->d
+    for (a, b, c, d) in lst1:
+        if - c + d -a + b > maxi:
+            maxi = -a + b - c + d
+    # find the max from the 2 combinations
+    # find the max difference between a -> b, the check if there is only one (no (c,d))
+    lst2 = list(combinations(A, 2))
+    for (a, b) in lst2:
+        if -a + b > maxi:
+            maxi = -a + b
+    return maxi
 
 
 if __name__ == '__main__':
