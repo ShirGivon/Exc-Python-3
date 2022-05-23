@@ -20,3 +20,4 @@ if __name__ == '__main__':
     price = [100, 180, 260, 310, 40, 535, 695]
     profit = maxProfit(price)
     print(profit)
+    print(maxProfit([3, 2, 1]))
