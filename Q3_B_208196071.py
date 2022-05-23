@@ -1,5 +1,6 @@
 from itertools import combinations
 
+
 # Function name: maxProfit(A)
 # Input: the A list
 # Output: the max difference from two elements -> two sales
@@ -10,7 +11,7 @@ def maxProfit(A):
     # find the max from the 4 combinations, (a,b),(c,d) ->
     # find the max difference between a -> b, c->d
     for (a, b, c, d) in lst1:
-        if - c + d -a + b > maxi:
+        if - c + d - a + b > maxi:
             maxi = -a + b - c + d
     # find the max from the 2 combinations
     # find the max difference between a -> b, the check if there is only one (no (c,d))
