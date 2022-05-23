@@ -1,17 +1,22 @@
+from itertools import permutations
+
+
 # Function name: maxProfit(A)
 # Input: the A list (n - the length of the A list)
 # Output: the max difference from two elements -> What the question want's
 def maxProfit(A):
-    n = len(A)
-    # we initialize for the start the max_diff for the first one that is possible
-    max_diff = A[1] - A[0]
-    # for - on every element in the list
-    for i in range(n):
-        # for to check the i element with all the followings in the list
-        for j in range(i + 1, n):
-            if A[j] - A[i] > max_diff:
-                max_diff = A[j] - A[i]
-    return max_diff
+    maxi = 0
+    a = list(permutations(A, 2))
+    print(a)
+    b = list(permutations(A, 4))
+    print(b)
+    for (x, y, z, w) in b:
+        if -x + y - z + w > maxi:
+            maxi = -x + y - z + w
+    for (x, y) in a:
+        if -x + y > maxi:
+            maxi = -x + y
+    return maxi
 
 
 if __name__ == '__main__':
