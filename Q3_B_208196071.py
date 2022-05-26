@@ -20,12 +20,3 @@ def maxProfit(A):
         if -a + b > maxi:
             maxi = -a + b
     return maxi
-
-
-if __name__ == '__main__':
-    A = [5, 2, 10]
-    print(maxProfit(A))
-    B = [7, 2, 4, 8, 7]
-    print(maxProfit([7, 2, 4, 8, 7]))
-    C = [1, 2, 1, 2]
-    print(maxProfit(C))
