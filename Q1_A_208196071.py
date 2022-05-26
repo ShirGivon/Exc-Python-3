@@ -16,7 +16,3 @@ def permute(A):
                 list1.append(x[:k] + A[i] + x[k:])
     # now list1 is a list of string's - we want it to be a list of lists (chars), so:
     return sorted([list(x) for x in list1])
-
-
-if __name__ == '__main__':
-    print(permute("abc"))

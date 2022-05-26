@@ -6,6 +6,3 @@ def permute(A):
     # it's returning a list of string's - so like in Q1_A, we will return:
     return sorted([list(x) for x in list(permutations(A))])
 
-
-if __name__ == '__main__':
-    print(permute('abc'))

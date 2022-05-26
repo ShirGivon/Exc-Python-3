@@ -28,27 +28,3 @@ def dyn_calculate(A, i, j, N):
 def solve(A):
     # we are starting from the 0 row and 0 column + we add the A[0][0]
     return A[0][0] + dyn_calculate(A, 0, 0, len(A))
-
-
-if __name__ == '__main__':
-    A = [
-        [3, 0, 0, 0],
-        [7, 4, 0, 0],
-        [2, 4, 6, 0],
-        [8, 5, 9, 3]
-    ]
-    print(solve(A))
-    B = [
-        [8, 0, 0, 0],
-        [4, 4, 0, 0],
-        [2, 2, 6, 0],
-        [1, 1, 1, 1]
-    ]
-    print(solve(B))
-    C = [
-        [20, 0, 0, 0],
-        [1, 1, 0, 0],
-        [2, 2, 2, 0],
-        [5, 5, 6, 4]
-    ]
-    print(solve(C))
